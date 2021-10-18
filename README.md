@@ -35,14 +35,14 @@ subject to: 	2x + y ≤ 18
 int main()
 {	
     // problem setup
-	MATRIX problem = {
-		LINE("w1", { 2, 1, 1, 0, 0, 18 }),
-		LINE("w2", { 2,3,0,1,0,42 }),
-        LINE("w3", { 3,1,0,0,1,24 }),
-		LINE("P", { -3,-2,0,0,0,0 })
-	};
+    MATRIX problem = {
+	LINE("w1", { 2, 1, 1, 0, 0, 18 }),
+	LINE("w2", { 2, 3, 0, 1, 0, 42 }),
+        LINE("w3", { 3, 1, 0, 0, 1, 24 }),
+	LINE("P", { -3, -2, 0, 0, 0, 0 })
+    };
 		
-	S_RESULTS result = Simplex::SolveEq(problem, 2); // where 2 is the total number of variables
+    S_RESULTS result = Simplex::SolveEq(problem, 2); // where 2 is the total number of variables
 
     cout << result.GetValue("Pmax") << endl; // 33
 
